@@ -163,6 +163,27 @@ body {
     width: 100%;
 }
 
+/* Ticket System Button */
+.btn-ticket {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #ff6b95 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(242, 53, 104, 0.3);
+    white-space: nowrap;
+    margin-left: 20px;
+}
+
+.btn-ticket:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(242, 53, 104, 0.5);
+}
+
 .mobile-toggle {
     display: none;
     flex-direction: column;
@@ -1148,10 +1169,20 @@ body {
         height: 50px;
         font-size: 20px;
     }
+
+    .btn-ticket {
+        padding: 10px 18px;
+        font-size: 13px;
+        margin-left: 16px;
+    }
 }
 
 @media (max-width: 768px) {
     .action-buttons {
+        display: none;
+    }
+
+    .btn-ticket {
         display: none;
     }
 }
