@@ -8,10 +8,10 @@
 }
 
 :root {
-    /* Primary Colors */
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --primary-light: #3b82f6;
+    /* Primary Colors - Logit Pink/Magenta */
+    --primary-color: #f23568;
+    --primary-dark: #d12050;
+    --primary-light: #f5517d;
 
     /* Neutral Colors */
     --dark: #0f172a;
@@ -26,7 +26,7 @@
     --border-color: #e2e8f0;
 
     /* Accent Colors */
-    --accent-color: #0ea5e9;
+    --accent-color: #f23568;
     --success-color: #10b981;
 
     /* Spacing */
@@ -96,6 +96,18 @@ body {
     font-size: 28px;
     font-weight: 700;
     color: var(--dark);
+}
+
+/* Logo Image Styling */
+.logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.logo-image:hover {
+    opacity: 0.8;
 }
 
 .nav-menu {
@@ -594,6 +606,14 @@ body {
 .footer-logo p {
     color: var(--text-light);
     font-size: 14px;
+}
+
+/* Footer Logo Image */
+.footer-logo-image {
+    height: 35px;
+    width: auto;
+    margin-bottom: 12px;
+    filter: brightness(0) invert(1);
 }
 
 .footer-links {

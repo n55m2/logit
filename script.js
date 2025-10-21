@@ -375,4 +375,4 @@ if ('serviceWorker' in navigator) {
 }
 */
 
-console.log('%c🚀 Logit Computer GmbH Website Loaded Successfully!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+console.log('%c🚀 Logit Computer GmbH Website Loaded Successfully!', 'color: #f23568; font-size: 16px; font-weight: bold;');
