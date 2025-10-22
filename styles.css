@@ -138,7 +138,7 @@ body {
 
 /* Logo Image Styling */
 .logo-image {
-    height: 45px;
+    height: 35px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
@@ -200,7 +200,9 @@ body.dark-mode .logo-dark {
 
 /* Ticket System Button */
 .btn-ticket {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 24px;
     background: linear-gradient(135deg, var(--primary-color) 0%, #ff6b95 100%);
     color: white;
@@ -217,6 +219,31 @@ body.dark-mode .logo-dark {
 .btn-ticket:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(242, 53, 104, 0.5);
+}
+
+.btn-ticket .ticket-icon {
+    display: none;
+}
+
+.btn-ticket .ticket-text {
+    display: inline;
+}
+
+/* Mobile: Nur Icon anzeigen */
+@media (max-width: 968px) {
+    .btn-ticket {
+        padding: 12px;
+        min-width: 44px;
+        justify-content: center;
+    }
+    
+    .btn-ticket .ticket-icon {
+        display: block;
+    }
+    
+    .btn-ticket .ticket-text {
+        display: none;
+    }
 }
 
 /* Theme Toggle Button - Improved & Smaller */
@@ -383,7 +410,7 @@ body.dark-mode .nav-menu {
 
 .hero-image {
     position: relative;
-    height: 550px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,8 +418,8 @@ body.dark-mode .nav-menu {
 }
 
 .hero-illustration {
-    width: 100%;
-    max-width: 750px;
+    width: 140%;
+    max-width: 1600px;
     height: auto;
     filter: drop-shadow(0 20px 60px rgba(242, 53, 104, 0.15));
     transition: all 0.3s ease;
