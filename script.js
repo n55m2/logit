@@ -375,4 +375,36 @@ if ('serviceWorker' in navigator) {
 }
 */
 
+// ===============================================
+// Dark/Light Mode Toggle
+// ===============================================
+
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+// Apply the theme on page load
+if (currentTheme === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+// Toggle theme on button click
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+
+        // Save preference to localStorage
+        const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+
+        // Optional: Add a little feedback animation
+        themeToggle.style.transform = 'rotate(360deg)';
+        setTimeout(() => {
+            themeToggle.style.transform = '';
+        }, 300);
+    });
+}
+
 console.log('%c🚀 Logit Computer GmbH Website Loaded Successfully!', 'color: #f23568; font-size: 16px; font-weight: bold;');

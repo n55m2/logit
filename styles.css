@@ -46,8 +46,25 @@
     --transition: all 0.3s ease;
 }
 
+/* Dark Mode Variables */
+body.dark-mode {
+    --dark: #ffffff;
+    --dark-secondary: #f8fafc;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+
+    --bg-light: #0f172a;
+    --bg-white: #1e293b;
+    --border-color: #334155;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -126,6 +143,19 @@ body {
     opacity: 0.8;
 }
 
+/* Logo Light/Dark Mode Switching */
+.logo-dark {
+    display: none;
+}
+
+body.dark-mode .logo-light {
+    display: none;
+}
+
+body.dark-mode .logo-dark {
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -182,6 +212,65 @@ body {
 .btn-ticket:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(242, 53, 104, 0.5);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle svg {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+    color: var(--text-primary);
+}
+
+.moon-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+    color: var(--text-primary);
+}
+
+body.dark-mode .sun-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0);
+}
+
+body.dark-mode .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Dark Mode Navigation Adjustments */
+body.dark-mode .navbar .nav-wrapper {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-menu {
+    background: rgba(30, 41, 59, 0.95);
 }
 
 .mobile-toggle {
@@ -961,9 +1050,9 @@ body {
         border-radius: 20px;
         padding: 12px 16px;
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto 1fr auto auto;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
     }
 
     .logo {
@@ -977,10 +1066,17 @@ body {
         justify-self: center;
     }
 
-    .btn-ticket {
+    .theme-toggle {
         order: 3;
-        padding: 8px 16px;
-        font-size: 12px;
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+    }
+
+    .btn-ticket {
+        order: 4;
+        padding: 8px 12px;
+        font-size: 11px;
         margin-left: 0;
         white-space: nowrap;
     }
@@ -1175,6 +1271,43 @@ body {
 .action-btn:hover::after {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Dark Mode Additional Styles */
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+body.dark-mode .service-card {
+    background: var(--bg-white);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .service-card:hover {
+    background: linear-gradient(135deg, #1e293b 0%, rgba(242, 53, 104, 0.05) 100%);
+}
+
+body.dark-mode .about {
+    background: var(--bg-light);
+}
+
+body.dark-mode .contact {
+    background: var(--bg-light);
+}
+
+body.dark-mode .contact-form-wrapper {
+    background: var(--bg-white);
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: var(--bg-light);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.dark-mode .footer > .container {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(10, 14, 26, 0.98) 100%);
 }
 
 /* Responsive - Hide on small screens */
