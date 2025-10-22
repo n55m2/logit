@@ -398,12 +398,6 @@ if (themeToggle) {
         // Save preference to localStorage
         const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
         localStorage.setItem('theme', theme);
-
-        // Optional: Add a little feedback animation
-        themeToggle.style.transform = 'rotate(360deg)';
-        setTimeout(() => {
-            themeToggle.style.transform = '';
-        }, 300);
     });
 }
 
